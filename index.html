@@ -84,6 +84,19 @@ inventory and schedules.</p>
 or companies requires agreements on access, ownership, security, and
 responsibilities. Each team should receive only the information it is
 authorized to use.</p>
+<h2 id="pump-monitoring-example">A practical example: monitoring a cooling-water pump</h2>
+<p>Consider a hypothetical pilot for a cooling-water pump. The goal is to give maintenance staff earlier visibility into unusual conditions, while leaving operation and protection of the pump with the existing systems and personnel.</p>
+<ol>
+<li><strong>Collect approved data:</strong> The site selects vibration, bearing temperature, motor current, flow, operating state, and relevant maintenance history. A site-approved read-only source, such as a historian, provides copies of selected data through an approved boundary. The monitoring application has no control path to the pump.</li>
+<li><strong>Check the data:</strong> The service checks timestamps, missing values, sensor quality, and whether the pump is running. It marks stale or incomplete data rather than treating it as a normal reading.</li>
+<li><strong>Analyze the trend:</strong> Start with a baseline and simple thresholds or a CPU-based model. Compare readings with similar operating conditions. If analysis of large vibration datasets or many assets warrants it, evaluate a GPU against the CPU for the actual workload.</li>
+<li><strong>Review the alert:</strong> A dashboard shows the relevant trends, data age, and reason for the alert. An authorized operator checks the readings and maintenance records, then follows site procedures to decide whether an inspection is needed.</li>
+<li><strong>Learn from the outcome:</strong> Record whether the alert was useful, what the inspection found, and any missed or false alerts. Use that feedback to improve the pilot and review it with equipment specialists.</li>
+</ol>
+<p>This example is illustrative, not a claim of a deployed system or a measured reduction in failures. The monitoring service does not replace alarms, protective functions, or operator judgment.</p>
+<h3>Where Kubernetes and language models fit</h3>
+<p>A small pilot might run on a site-approved server without Kubernetes or a GPU. Kubernetes becomes worth evaluating when multiple services or sites need consistent deployment, resource scheduling, monitoring, and recovery, and when the team can support the additional operational complexity. Test the complete system, including its dependencies, before relying on it.</p>
+<p>LoRA or QLoRA could help adapt a language model to summarize approved work orders or use site terminology. A document assistant could also use RAG to retrieve current manuals. Neither approach detects pump faults by itself; sensor analysis needs its own validation. Protect sensitive data and check generated answers against approved sources.</p>
 <h2 id="using-gpus-to-improve-overall-efficiency">Using GPUs to improve
 overall efficiency</h2>
 <p>Industrial environments can produce large volumes of sensor readings,
@@ -167,6 +180,7 @@ safeguards</h2>
 requirements. A practical starting point is read-only, advisory
 operation using approved data flows, suitable network segmentation,
 access controls, and the site’s change-management process.</p>
+<p><strong>OT systems do not need to be directly exposed to the internet for this approach.</strong> Where data must cross a network boundary, use a site-approved architecture, such as a segmented industrial DMZ and a read-only data replica or historian. A one-way transfer mechanism may be appropriate where required by the site's risk assessment. Even read-only connections introduce risks, so the OT and security teams should approve, monitor, and maintain the data path. Keep credentials and access limited, and do not create a return control path to field devices.</p>
 <p>AI recommendations should be reviewed by qualified personnel. Any
 proposal for AI to influence physical operations requires a separate
 engineering risk assessment, testing, validation, and formal approval by
@@ -175,6 +189,7 @@ the responsible teams.</p>
 <p>A pilot could focus on one class of pump or compressor. Establish a
 baseline, check data quality, run the model in advisory mode, and
 compare its alerts with real observations.</p>
+<p>Before the pilot, agree on the assets, observation period, baseline, and what counts as a useful alert or a missed event. Record equipment operating conditions and maintenance actions so that comparisons are meaningful. Review alerts alongside confirmed inspections; limited failure data can make conclusions uncertain. Compare a simple CPU-based approach with any proposed GPU setup using the same data and workload, including hardware, power, support, and operating costs. Expand only after the responsible teams review the evidence and risks.</p>
 <p>Measure useful alerts, false alerts, missed events, data freshness,
 application availability, response time, and maintenance outcomes. Track
 compute cost and energy use where possible. Claim a reduction in
@@ -201,4 +216,4 @@ Energy Information Administration: Refining crude oil</a></li>
 </ul>
 <p><em>Examples are hypothetical and do not represent a deployed system
 or measured results.</em></p>
-</article><aside class="aside"><b>On this page</b><a href="#ai-in-industrial-control-systems-and-operational-technology">Industrial AI</a><a href="#upstream-production">Upstream</a><a href="#midstream-transportation-and-storage">Midstream</a><a href="#downstream-refining-and-processing">Downstream</a><a href="#using-gpus-to-improve-overall-efficiency">GPU efficiency</a><a href="#lora-and-qlora-adapting-models-efficiently">LoRA and QLoRA</a><a href="#kubernetes-for-managing-the-platform">Kubernetes</a><a href="#security-and-operational-safeguards">Safeguards</a></aside></main><footer><div class="foot"><span>© Nikhil Sunku</span><a href="https://github.com/nikhilsunku">GitHub profile ↗</a></div></footer></body></html>
+</article><aside class="aside"><b>On this page</b><a href="#ai-in-industrial-control-systems-and-operational-technology">Industrial AI</a><a href="#upstream-production">Upstream</a><a href="#midstream-transportation-and-storage">Midstream</a><a href="#downstream-refining-and-processing">Downstream</a><a href="#pump-monitoring-example">Pump example</a><a href="#using-gpus-to-improve-overall-efficiency">GPU efficiency</a><a href="#lora-and-qlora-adapting-models-efficiently">LoRA and QLoRA</a><a href="#kubernetes-for-managing-the-platform">Kubernetes</a><a href="#security-and-operational-safeguards">Safeguards</a></aside></main><footer><div class="foot"><span>© Nikhil Sunku</span><a href="https://github.com/nikhilsunku">GitHub profile ↗</a></div></footer></body></html>
