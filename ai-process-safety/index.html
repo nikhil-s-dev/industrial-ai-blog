@@ -87,6 +87,30 @@ a{color:var(--accent);text-underline-offset:3px}a:focus-visible{outline:3px soli
 <li><strong>Controlled information:</strong> restrict access to drawings, images, permits, and location data. Follow site rules for photography, retention, contractors, and sharing.</li>
 <li><strong>Independent safeguards:</strong> existing alarms, protective functions, permits, and emergency procedures continue to work without the AI application. A model failure or network outage must not defeat them.</li>
 </ul>
+<h2 id="costs">Would the savings be worth the cost?</h2>
+<p>An outage or safety incident can cost a plant much more than the price of a replacement pipe. Production may stop, equipment may need repairs, and the site may need extra labor, investigations, cleanup, or contractor support. An injury can also affect workers and their families in ways that cannot be reduced to a dollar amount. <a href="https://www.osha.gov/businesscase/costs">OSHA describes both direct and indirect costs</a> that can follow a workplace injury.</p>
+<p>If a well-tested system helps a crew catch a mistake before work begins, it might help avoid some of these costs. It could also save time spent finding drawings or resolving incorrect work orders. But a warning does not prove that an accident would have happened, and a new app does not guarantee fewer outages or injuries. Any financial estimate must be based on the plant’s own evidence and assumptions.</p>
+<h3>What about insurance?</h3>
+<p>Depending on the policy, a plant may have insurance for property damage, liability, workers’ compensation, or business interruption. Coverage can have deductibles, limits, waiting periods, and exclusions. For example, <a href="https://content.naic.org/insurance-topics/business-interruption-and-business-owner-policy">the National Association of Insurance Commissioners explains</a> that business interruption coverage depends on the policy and the event that caused the loss.</p>
+<p>A serious incident can affect future insurance costs, but adding AI does not automatically lower premiums. The plant should ask its insurer or broker how its policy and safety program are assessed. In a financial calculation, count the plant’s expected loss after any likely insurance recovery. Do not count the full loss and the insurance payment as two separate savings. Include a premium reduction only if the insurer actually confirms it.</p>
+<h3>What would the AI system cost?</h3>
+<p>The first cost is getting the plant information ready: checking drawings, mapping pipes, connecting work orders and permits, and testing the app with workers. The site may also need approved mobile devices, software, secure storage, integration, and training. A small pilot may run on existing computers; GPUs are only needed if the chosen workload and testing justify them.</p>
+<p>After launch, the plant still has to pay for software support, computing, security, staff training, and keeping the map current after equipment changes. It also needs people to investigate alerts and check that the app continues to work properly. Unnecessary warnings and extra time spent reviewing them are costs too.</p>
+<h3>A simple example</h3>
+<p>These numbers are made up to show the calculation. They are not prices, results from SK Energy, or a claim that this system will reduce incidents by a particular amount.</p>
+<div class="example"><p class="kicker">Illustrative first-year calculation</p>
+<ul>
+<li>One-time setup and testing: <strong>$150,000</strong>.</li>
+<li>First year of support and operating costs: <strong>$60,000</strong>.</li>
+<li>Total first-year cost: <strong>$210,000</strong>.</li>
+<li>Assumed annual time and work-planning savings: <strong>$100,000</strong>.</li>
+<li>Assumed reduction in the plant’s average annual loss from incidents and outages: <strong>$120,000</strong>.</li>
+</ul>
+<p><strong>Estimated first-year benefit:</strong> $220,000.<br><strong>Estimated first-year net result:</strong> $220,000 minus $210,000, or <strong>+$10,000</strong>.</p></div>
+<p>In this example, the $120,000 is an assumed reduction in the plant’s <em>average expected annual loss</em> after insurance recoveries. It is not the cost of an incident that was actually prevented. The estimate assumes an average annual loss of $400,000 without the app and $280,000 with it. The assumed $100,000 in time savings is separate from the loss estimate and is calculated after the extra time spent responding to false alerts. It does not include an insurance premium reduction.</p>
+<p>Under the same assumptions, if the $150,000 setup cost is not repeated, each later year would have $220,000 in benefits minus $60,000 in operating costs, or <strong>+$160,000 a year</strong>. Those figures ignore taxes, financing, and the changing value of money over time. A longer-term investment decision should account for those as well.</p>
+<p>But the result could also be negative. If the combined annual benefits were only $60,000, the first-year result would be <strong>−$150,000</strong> after the $210,000 in costs. Later years would break even if annual costs and benefits both remained $60,000. The difference depends on actual setup costs, ongoing costs, usefulness of the alerts, and how often the system helps with a problem that existing checks would not already catch.</p>
+<p>Before buying or expanding a system, compare it with the current process and simpler options such as clearer labels, better drawings, and improved training. Use the pilot to measure time spent and alert quality. Serious incidents are rare, so a short pilot alone cannot prove how much accident risk has fallen. Treat projected risk savings as uncertain, review them with safety and finance teams, and never remove a required safeguard to make the numbers look better.</p>
 <h2 id="pilot">Start with a small, measurable pilot</h2>
 <p>I would begin with one pump area and a small group of connected pipes. First, operations and engineering would check the labels, drawings, and map against what is actually in the field. The app could then suggest a pump or line and show the related work order while the crew follows its normal checks. Operations, maintenance, safety, and contractor representatives should take part in designing and reviewing the pilot.</p>
 <p>Test the app with similar pumps and pipes, damaged or hidden labels, poor lighting, difficult camera angles, and deliberately mismatched work orders. Also test old records, missing sensor readings, inaccurate location information, and loss of network service. The pilot must not create unsafe plant conditions.</p>
@@ -97,6 +121,8 @@ a{color:var(--accent);text-underline-offset:3px}a:focus-visible{outline:3px soli
 <p>The following sources include a company case study and U.S. safety and security guidance. The applicable rules depend on the facility, the type of work, and the jurisdiction.</p>
 <ul class="sources">
 <li><a href="https://www.ptc.com/en/case-studies/smartplant-innovation-skenergy">PTC: SK Energy’s smart plant case study</a></li>
+<li><a href="https://www.osha.gov/businesscase/costs">OSHA: Costs of workplace injuries and illnesses</a></li>
+<li><a href="https://content.naic.org/insurance-topics/business-interruption-and-business-owner-policy">NAIC: Business interruption insurance</a></li>
 <li><a href="https://developers.google.com/ar/develop/anchors">Google: Working with AR anchors</a></li>
 <li><a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.119">OSHA: Process safety management of highly hazardous chemicals, 29 CFR 1910.119</a></li>
 <li><a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1910/1910.146">OSHA: Permit-required confined spaces, 29 CFR 1910.146</a></li>
@@ -105,8 +131,8 @@ a{color:var(--accent);text-underline-offset:3px}a:focus-visible{outline:3px soli
 <li><a href="https://www.osha.gov/laws-regs/regulations/standardnumber/1926/1926.451">OSHA: General requirements for scaffolds in construction, 29 CFR 1926.451</a></li>
 <li><a href="https://csrc.nist.gov/pubs/sp/800/82/r3/final">NIST: Guide to Operational Technology Security, SP 800-82 Revision 3</a></li>
 </ul>
-<p><em>The pump, work orders, alerts, and pilot described here are hypothetical. The SK Energy example is based on PTC’s published case study.</em></p>
-</article><aside class="aside" aria-label="Article sections"><b>On this page</b><a href="#example">The work problem</a><a href="#identification">Equipment identification</a><a href="#phone-pipe">Phone and pipe identification</a><a href="#case-study">SK Energy case study</a><a href="#mapping">Plant map and sensors</a><a href="#hazards">Worksite hazards</a><a href="#permits">Permit preparation</a><a href="#turnarounds">Turnarounds</a><a href="#patterns">Recurring warnings</a><a href="#boundaries">System boundaries</a><a href="#pilot">A practical pilot</a><a href="#references">References</a></aside></main>
+<p><em>The pump, work orders, alerts, pilot, and cost calculations described here are hypothetical. The SK Energy example is based on PTC’s published case study.</em></p>
+</article><aside class="aside" aria-label="Article sections"><b>On this page</b><a href="#example">The work problem</a><a href="#identification">Equipment identification</a><a href="#phone-pipe">Phone and pipe identification</a><a href="#case-study">SK Energy case study</a><a href="#mapping">Plant map and sensors</a><a href="#hazards">Worksite hazards</a><a href="#permits">Permit preparation</a><a href="#turnarounds">Turnarounds</a><a href="#patterns">Recurring warnings</a><a href="#boundaries">System boundaries</a><a href="#costs">Costs and savings</a><a href="#pilot">A practical pilot</a><a href="#references">References</a></aside></main>
 <footer><div class="foot"><span>© Nikhil Sunku</span><div class="foot-links"><a href="../">Previous article</a><a href="https://github.com/nikhilsunku">GitHub profile ↗</a></div></div></footer>
 </body>
 </html>
